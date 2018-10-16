@@ -4,5 +4,5 @@
 ## Database Setup
 
 ```bash
-sqlite3 experiment.db < experiment.sql
+./build.sh
 ```
