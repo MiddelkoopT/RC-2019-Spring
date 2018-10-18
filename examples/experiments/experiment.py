@@ -8,7 +8,6 @@ import sqlite3
 import git
 
 
-
 class Experiment:
     def __init__(self):
         self.db=sqlite3.connect('experiment.db')
@@ -19,6 +18,7 @@ class Experiment:
     def new(self):
         commitid=self.git.head.commit
         print("commitid",commitid)
+        print("dirty",self.git.is_dirty())
 
 ## External entrypoint for utility functions/testing.
 if __name__=='__main__':

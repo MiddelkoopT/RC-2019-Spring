@@ -6,7 +6,7 @@ CREATE TABLE Campaign (
        repo TEXT,
        commitid TEXT,
        branch TEXT,
-       status TEXT,    -- `git status --porcelain`
+       dirty TEXT,     -- Repo is dirty
        name TEXT,      -- Human readable name of this campaign
        config TEXT,    -- JSON configuration used to create the campaign
        note TEXT,      -- Optional Notes
