@@ -10,20 +10,31 @@ import git
 
 class Experiment:
     def __init__(self):
-        self.db=sqlite3.connect('experiment.db')
+        self._db=sqlite3.connect('experiment.db')
         config=configparser.ConfigParser()
-        self.config=config.read('local.ini')
+        config.read('local.ini')
         self.git=git.Repo(config.get('global','repo'))
 
-    def new(self):
-        commitid=self.git.head.commit
+    def new(self,name,config=None,note=None):
+        commitid=str(self.git.head.commit)
         print("commitid",commitid)
-        print("dirty",self.git.is_dirty())
+        cursor=self._db.cursor()
+        cursor.execute("INSERT INTO Campaign (repo,commitid,dirty,name,config,note) VALUES (?,?,?,?,?,?)",
+                         (self.git.remotes.origin.url,
+                          commitid, 
+                          self.git.is_dirty(), 
+                          name, config, note))
+        self.campaign=cursor.lastrowid
+        self._db.commit()
+        self.name=name
+        self.config=config
+        print("campaign",self.campaign)
+        
 
 ## External entrypoint for utility functions/testing.
 if __name__=='__main__':
     print('experiment.py')
     e=Experiment()
-    e.new()
+    e.new("Test1")
 
   
