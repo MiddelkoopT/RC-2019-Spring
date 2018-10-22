@@ -18,7 +18,6 @@ CREATE TABLE Experiment (
        id INTEGER PRIMARY KEY,
        campaign INTEGER,
        parameters TEXT, -- JSON parameters for the experiment
-       runs INTEGER,
        started DATE,
        finished DATE
 );

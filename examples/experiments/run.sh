@@ -2,5 +2,8 @@
 
 . envrionment.sh
 
-python experiment.py
+python3 experiment.py
+
+sqlite3 experiment.db .dump
+
 
