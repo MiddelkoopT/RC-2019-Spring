@@ -11,7 +11,8 @@ CREATE TABLE Campaign (
        config TEXT,    -- JSON configuration used to create the campaign
        note TEXT,      -- Optional Notes
        started DATE,
-       finshed DATE
+       finshed DATE,
+       closed BOOLEAN  -- Campaign is finished/aborted (True, False/NULL)
 );
 
 CREATE TABLE Experiment (

@@ -21,9 +21,11 @@ class Experiment:
         self.stepid=os.environ.get('SLURM_STEP_ID',None)
 
     def new(self,name,config=None,note=None):
+        """ Creates a new campaign, closes out all current/pending campaigns """
         commitid=str(self.git.head.commit)
         print("commitid",commitid)
         cursor=self._db.cursor()
+        cursor.execute("UPDATE Campaign SET closed=?",(True,))
         cursor.execute("INSERT INTO Campaign (repo,commitid,dirty,name,config,note) VALUES (?,?,?,?,?,?)",
                          (self.git.remotes.origin.url,
                           commitid, 
@@ -35,12 +37,27 @@ class Experiment:
         self.config=config
         print("campaign",self.campaign)
 
+    def start(self):
+        """ Start experiments """
+        cursor=self._db.cursor()
+        result=cursor.execute("SELECT id, commitid, name FROM campaign WHERE closed=?",(True,))
+        self.campaign, commitid, self.name = result.fetchone()
+        print("+++", self.campaign, commitid, self.name, self.jobid, self.stepid)
+
     def add(self,parameters):
         cursor=self._db.cursor()
-        cursor.execute("INSERT INTO Experiment (campaign,parameters) VALUES (?,?)",
+        cursor.execute("INSERT INTO experiment (campaign,parameters) VALUES (?,?)",
                        (self.campaign, parameters))
         self._db.commit()
 
+    def get(self):
+        cursor=self._db.cursor()
+        result=cursor.execute("SELECT id, parameters FROM experiment WHERE campaign=? AND started IS NULL LIMIT 1",(self.campaign,))
+        self.experimentid, parameters = result.fetchone()
+        return parameters
+        
+
+## Tests
 def testExperiment(e):
     e.new("Test1")
 
@@ -56,5 +73,8 @@ if __name__=='__main__':
     if e.jobid is None:
         testExperiment(e)
     else:
-        print("Slurm Job ID",e.jobid)
+        e.start()
+        parameters=e.get()
+        print(parameters)
+
 
