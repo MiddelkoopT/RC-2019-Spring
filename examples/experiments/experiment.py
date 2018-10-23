@@ -54,11 +54,11 @@ class Experiment:
         cursor=self._db.cursor()
         result=cursor.execute("SELECT id, parameters FROM experiment WHERE campaign=? AND started IS NULL LIMIT 1",(self.campaign,))
         self.experimentid, parameters = result.fetchone()
-        print("---",self.experimentid)
+        print("---",self.experimentid, parameters)
         cursor.execute("UPDATE experiment SET started=datetime('now') WHERE id=? AND started IS NULL", (self.experimentid,))
         assert self._db.total_changes==1 ## race condition achieved!
         self._db.commit()
-        return parameters
+        return json.loads(parameters)
         
 
 ## Tests
@@ -79,6 +79,5 @@ if __name__=='__main__':
     else:
         e.start()
         parameters=e.get()
-        print(parameters)
-
+        
 
