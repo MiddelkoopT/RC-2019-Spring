@@ -12,7 +12,7 @@ CREATE TABLE Campaign (
        note TEXT,      -- Optional Notes
        started DATE,
        finshed DATE,
-       closed BOOLEAN  -- Campaign is finished/aborted (True, False/NULL)
+       closed DATE     -- Campaign is closed (finished or aborted)
 );
 
 CREATE TABLE Experiment (

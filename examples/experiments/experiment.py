@@ -26,7 +26,8 @@ class Experiment:
         commitid=str(self.git.head.commit)
         print("commitid",commitid)
         cursor=self._db.cursor()
-        cursor.execute("UPDATE Campaign SET closed=?",(True,))
+        # Close all open campaigns.  Only allow running a single campaign.
+        cursor.execute("UPDATE Campaign SET closed=datetime('now') WHERE closed IS NULL");
         cursor.execute("INSERT INTO Campaign (repo,commitid,dirty,name,config,note) VALUES (?,?,?,?,?,?)",
                          (self.git.remotes.origin.url,
                           commitid, 
@@ -52,13 +53,17 @@ class Experiment:
         self._db.commit()
 
     def get(self):
+        ## Exclusive lock required to update row.
         cursor=self._db.cursor()
+        cursor.execute('BEGIN IMMEDIATE') 
         result=cursor.execute("SELECT id, parameters FROM experiment WHERE campaign=? AND started IS NULL LIMIT 1",(self.campaign,))
-        self.experiment, parameters = result.fetchone()
-        print("---", self.experiment, parameters)
-        cursor.execute("UPDATE experiment SET started=datetime('now') WHERE id=? AND started IS NULL", (self.experiment,))
-        assert self._db.total_changes==1 ## race condition achieved!
+        if result is not None:
+            self.experiment, parameters = result.fetchone()
+            cursor.execute("UPDATE experiment SET started=datetime('now') WHERE id=? AND started IS NULL", (self.experiment,))
+            assert self._db.total_changes==1 ## race condition achieved!
         self._db.commit()
+
+        print("---", self.experiment, parameters)
         return json.loads(parameters)
         
     def put(self,result):
