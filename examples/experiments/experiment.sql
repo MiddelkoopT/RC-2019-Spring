@@ -30,8 +30,8 @@ CREATE TABLE Run (
        cluster TEXT,   -- SLURM job information
        jobid INTEGER,
        stepid INTEGER,
+       arrayid INTEGER,
        started DATE,
        finsihed DATE,
-       state BOOLEAN,  -- SLRURM Job state, used for crash detection.
        result TEXT     -- JSON result for the experiment
 );
