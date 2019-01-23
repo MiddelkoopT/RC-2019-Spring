@@ -39,7 +39,7 @@ specific tools such as CPLEX, Gurobi, and others.
 ### Discussion 
  * What is Information Technology?
  * What does High Performance Computing mean to you?
- * What about computational and data research you like to learn?
+ * What about computational and data research would you like to learn?
 
 Information Technology (IT), and by extension research computing
 systems is the **physical**, **computational**, and **software**,
