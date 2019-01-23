@@ -78,7 +78,7 @@ All this is all brought together by **teams** with
  * Chapter 1, Introduction. "High Performance Computing: Modern Systems and Practices"
  
 ### Homework
-Homework 1-0: Using Secure Shell
+Homework 0-1: Using Secure Shell
  1. Connect to clark.rnet.missouri.edu with your pawprint (SSO) and pawprint password and run the following commands and copy and paste the session (as text).
     1. `hostname`
     1. `whoami |sum`
@@ -155,7 +155,7 @@ where `git@gitlab.missouri.edu:middelkoopt/welcome.git` is the pasted from the s
 
 ### Homework
 
-1. Homework 1-2: Gitlabs
+1. Homework 0-2: Gitlabs
     1. Create a repository on https://gitlab.missouri.edu called rc-pawprint-first-last as described in the Hands-On section (`git@gitlab.missouri.edu:$PAWPRINT/mis-$PAWPRINT-$FIRST-$LAST.git`).
     2. Assign "Reporter" permissions to `@middelkoopt` to the project
     3. Create a `ReadMe.md` file and commit it to the repository (note the upper/lower case and spelling).
