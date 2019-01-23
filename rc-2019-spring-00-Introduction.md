@@ -82,3 +82,90 @@ Homework 1-0: Using Secure Shell
  1. Connect to clark.rnet.missouri.edu with your pawprint (SSO) and pawprint password and run the following commands and copy and paste the session (as text).
     1. `hostname`
     1. `whoami |sum`
+
+## Working with a Cluster
+
+And in the beginning there was git. `git init`
+
+### Basic Linux
+There are a number of good tutorials and videos online.  We use the Software Carpentry website section on the Linux Shell (http://swcarpentry.github.io/shell-novice/) sections 1-3.
+
+To get help run the `man` command with the first argument with the name of the command.  Many programs you can also just run the command with `--help`, for example `man --help`.
+
+CLI Concepts:
+* prompt/shell, path, file, program, arguments, switches
+
+Basic commands:
+* `man`, `ls`, `pwd`, `cd`, `mkdir`, `rmdir`, `mv`, `rm`, `echo`, `touch`, `cat`, `less`, `grep`, `wc`, `sort`, `gzip`
+* `git`
+* `ssh`, `wget`, `curl`, `rsync`
+* `tar`, `unzip`, `zip`
+* `exit`
+
+Redirection:
+* `<`, `>`, `>>`, `|`, 
+
+Editors:
+* `nano`, `emacs`, `vi`
+
+
+### Git
+
+We will first create a `gitlab.missouri.edu` repository and clone it.
+
+Go to Mizzou's Gitlabs server at https://gitlab.missouri.edu and login using your Pawprint (SSO) and password (use the default LDAP method).
+
+Create a new private project called `rc-login-First-Last` where login is your pawprint, for example I would be `rc-middelkoopt-Timothy-Middelkoop`.
+
+Make sure your gitlabs project visibility is set to private. To make it priviate navigate to Settings -> Sharing and Visibility -> Project Visibility -> Private.
+
+Share this project with myself `@middelkoopt` with the access "Reporter".
+
+Create a ssh key by logging into `clark.rnet.missouri.edu` and running the following (make sure to create a strong passphrase):
+
+```
+$ cd ~
+$ ssh-keygen
+$ cat .ssh/id_rsa.pub
+```
+
+Copy the public key shown by the `cat .ssh/id_rsa.pub` command, it should look similar to this:
+
+```
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDuSqEsyPw9gULRil72VHCrpw/+dmKpcPp50rr7YypK95T4US7eiwOqX0VJANKde77MjAy7+rgbjNJDbO6V3VLSJxOlUWS4Vj7wBF1j/u7EUnjdp2mMMHA2zu7sIwbjp+tjt44MYxK1P/RbB1sXwwIOUvxOZjG1uKsO/Xze6GX3l2pxkb+aDiZ+i8JZdnwC9+0ZFwUVBhcXO90IHapz1rppTFO9K1LRJtj/aiSOcD2E0mphLLDD7Z5l9EDK0tijYz/fB2F0lUFlF1isjKAGkW+Uq5CzsMDtfXWG5skaEKMf2ujMDGEenHZ3662tN2XfVc/I6NOGFGZ9QH+jLmV7JhCl middelkoopt@tc-m610-login-node623
+```
+
+Go back to gitlabs and add your public ssh-key to your account as follows (the Avatar/Account button is on the top right of the page):
+
+```
+"Avatar" -> Settings -> ssh-keys -> Key: paste public key
+```
+
+Now go to "Project" website and copy the git URL by doing the following (the "Hamburger" is the icon with three lines on the top left of the page).
+
+"Hamburger" -> Projects -> Your Projects -> select the project to
+clone (in this case mis-$USER-$NAME) -> home -> click the clipboard
+icon next to the URL, make sure SSH is selected not HTTP.
+
+Now go to your class folder on `clark.rnet.missouri.edu` and clone the repository
+```
+git clone git@gitlab.missouri.edu:middelkoopt/welcome.git
+```
+where `git@gitlab.missouri.edu:middelkoopt/welcome.git` is the pasted from the step before.
+
+### Homework
+
+1. Homework 1-2: Gitlabs
+    1. Create a repository on https://gitlab.missouri.edu called rc-pawprint-first-last as described in the Hands-On section (`git@gitlab.missouri.edu:$PAWPRINT/mis-$PAWPRINT-$FIRST-$LAST.git`).
+    2. Assign "Reporter" permissions to `@middelkoopt` to the project
+    3. Create a `ReadMe.md` file and commit it to the repository (note the upper/lower case and spelling).
+    4. Clone the repository on `clark.rnet.missouri.edu`
+    5. Modify the `ReadMe.md` on `clark.rnet.missouri.edu` and push it back to `gitlab.missouri.edu`.  Include your name and short one paragraph biography.
+    6. Run `git log` and paste the last commit/revision/hash or the output of `git rev-parse HEAD` into the homework assignment.
+
+### References
+* Software Carpentry: Linux Shell (http://swcarpentry.github.io/shell-novice/) sections 1-3
+* Pro Git book https://git-scm.com/book/en/v2
+* Software Carpentry - Git http://swcarpentry.github.io/git-novice/
+* GitLabs Markdown https://docs.gitlab.com/ee/user/markdown.html
+
