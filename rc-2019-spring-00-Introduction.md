@@ -1,4 +1,4 @@
-# IMSE 4410 Fall 2018 - Introduction
+# IMSE 8410 Spring 2019 - Introduction
 
 *IMSE 8410 Advanced Computational Systems and Data Engineering*
 
