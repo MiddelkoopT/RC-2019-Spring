@@ -19,19 +19,24 @@ CREATE TABLE Experiment (
        id INTEGER PRIMARY KEY,
        campaign INTEGER,
        parameters TEXT, -- JSON parameters for the experiment
-       started DATE,
-       finished DATE
+       runid INTEGER    -- 
 );
 
 CREATE TABLE Run (
        id INTEGER PRIMARY KEY,
        campaign INTEGER,
-       experiment INTEGER,
        cluster TEXT,   -- SLURM job information
        jobid INTEGER,
        stepid INTEGER,
-       arrayid INTEGER,
+       arrayid INTEGER
+);
+
+CREATE TABLE Result (
+       id INTEGER PRIMARY KEY,
+       campaign INTEGER,
+       experiment INTEGER,
+       run INTEGER,
+       result TEXT,
        started DATE,
-       finsihed DATE,
-       result TEXT     -- JSON result for the experiment
+       finsihed DATE
 );

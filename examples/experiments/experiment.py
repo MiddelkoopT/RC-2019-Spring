@@ -26,7 +26,7 @@ class Experiment:
         commitid=str(self.git.head.commit)
         print("commitid",commitid)
         cursor=self._db.cursor()
-        # Close all open campaigns.  Only allow running a single campaign.
+        # Close all open campaigns.  Only allow running a single campaign. Not concurrent safe.
         cursor.execute("UPDATE Campaign SET closed=datetime('now') WHERE closed IS NULL");
         cursor.execute("INSERT INTO Campaign (repo,commitid,dirty,name,config,note) VALUES (?,?,?,?,?,?)",
                          (self.git.remotes.origin.url,
@@ -42,8 +42,8 @@ class Experiment:
     def start(self):
         """ Start experiments """
         cursor=self._db.cursor()
-        result=cursor.execute("SELECT id, commitid, name FROM campaign WHERE closed IS NULL")
-        self.campaign, commitid, self.name = result.fetchone()
+        cursor.execute("SELECT id, commitid, name FROM campaign WHERE closed IS NULL")
+        self.campaign, commitid, self.name = cursor.fetchone()
         print("+++", self.campaign, commitid, self.name, self.jobid, self.stepid, self.arrayid)
 
     def add(self,parameters):
@@ -53,27 +53,30 @@ class Experiment:
         self._db.commit()
 
     def get(self):
-        ## Exclusive lock required to update row.
+        """ Get an experiment/run """
         cursor=self._db.cursor()
-        cursor.execute('BEGIN IMMEDIATE') 
-        result=cursor.execute("SELECT id, parameters FROM experiment WHERE campaign=? AND started IS NULL LIMIT 1",(self.campaign,))
-        if result is not None:
-            self.experiment, parameters = result.fetchone()
-            cursor.execute("UPDATE experiment SET started=datetime('now') WHERE id=? AND started IS NULL", (self.experiment,))
-            assert self._db.total_changes==1 ## race condition achieved!
+        # Grab a run first due to sqlite3 concurrency and no SELECT for UPDATE
+        cursor.execute("INSERT INTO run (campaign, cluster, jobid, stepid, arrayid) VALUES (?,?,?,?,?)",
+                       (self.campaign, self.cluster, self.jobid, self.stepid, self.arrayid))
+        self.run=cursor.lastrowid
+        cursor.execute("UPDATE experiment SET runid=? WHERE id=(SELECT id FROM experiment WHERE runid IS NULL LIMIT 1)",(self.run,)) 
+        cursor.execute("SELECT id, parameters FROM experiment WHERE runid=?",(self.run,))
+        result=cursor.fetchone()
+        if result is None:
+            cursor.rollback()
+            return None
+        self.experiment, parameters = result
+        assert cursor.fetchone() == None # Multiple experiments assigned to 1 runid
         self._db.commit()
 
-        print("---", self.experiment, parameters)
+        print("---", self.experiment, self.run, parameters)
         return json.loads(parameters)
         
     def put(self,result):
-        cursor=self._db.cursor()
-        cursor.execute("""
-INSERT INTO run (campaign, experiment, cluster, jobid, stepid, arrayid, result)
-        VALUES (?,?,?,?,?,?,?)
-""",
-                       (self.campaign, self.experiment, self.cluster, self.jobid, self.stepid, self.arrayid, json.dumps(result)))
-        self._db.commit()
+        pass
+        #cursor=self._db.cursor()
+        #self._db.commit()
+        #(self.experiment, json.dumps(result))
 
 
 ## External entrypoint for utility functions/testing.
@@ -93,6 +96,9 @@ if __name__=='__main__':
     else:
         e.start()
         parameters=e.get()
-        e.put(parameters)
+        if parameters is None:
+            print("extra")
+        else:
+            e.put(parameters)
         #e.finish()
 
