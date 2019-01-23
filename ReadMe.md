@@ -26,6 +26,11 @@ the life-cycle of research projects.  Tools include Git, Python, R,
 and Julia with domain specific tools such as CPLEX, Gurobi, and
 others.
 
+## Text
+“High Performance Computing: Modern Systems and Practices” by Maciej
+Brodowicz, Matthew Anderson, and Thomas Sterling, Elsevier
+Science, 2017.  ISBN: 9780124201583
+
 ## Software
 
 A Secure Shell Client (ssh) is required. The following ssh clients are recommended:
