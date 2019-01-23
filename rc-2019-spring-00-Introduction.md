@@ -24,9 +24,9 @@ specific tools such as CPLEX, Gurobi, and others.
  * Welcome and personal introduction
  * Motivation for the class (scientific and engineering workflows)
  * Class overview and outline of topics
- * Hands on with secure shell (ssh).
- * What is Research Computing?
+ * Hands on with secure shell (ssh)
  * Careers in Research Computing
+ * Discussion
 
 ### Hands on
  * Use a secure shell client and connect to `clark.rnet.missouri.edu` using your pawprint login (SSO) and password.  You must use all lower case for your username and do not include the `@` or anything after it.
@@ -37,9 +37,9 @@ specific tools such as CPLEX, Gurobi, and others.
    * Mac users can use the built-in terminal by launching it from Spotlight by hitting `Command + Spacebar` and typing `Terminal` and then return.  To connect to the teaching cluster enter the command `ssh pawprint@clark.rnet.missouri.edu` where `pawprint` is your login (SSO) and enter your password when prompted.
 
 ### Discussion 
- * What is Information Technology?
  * What does High Performance Computing mean to you?
  * What about computational and data research would you like to learn?
+ * What is Information Technology?
 
 Information Technology (IT), and by extension research computing
 systems is the **physical**, **computational**, and **software**,
