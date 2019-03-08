@@ -156,12 +156,20 @@ where `git@gitlab.missouri.edu:middelkoopt/welcome.git` is the pasted from the s
 ### Homework
 
 1. Homework 0-2: Gitlabs
-    1. Create a repository on https://gitlab.missouri.edu called rc-pawprint-first-last as described in the Hands-On section (`git@gitlab.missouri.edu:$PAWPRINT/mis-$PAWPRINT-$FIRST-$LAST.git`).
-    2. Assign "Reporter" permissions to `@middelkoopt` to the project
-    3. Create a `ReadMe.md` file and commit it to the repository (note the upper/lower case and spelling).
-    4. Clone the repository on `clark.rnet.missouri.edu`
-    5. Modify the `ReadMe.md` on `clark.rnet.missouri.edu` and push it back to `gitlab.missouri.edu`.  Include your name and short one paragraph biography.
-    6. Run `git log` and paste the last commit/revision/hash or the output of `git rev-parse HEAD` into the homework assignment.
+   1. Create a repository on https://gitlab.missouri.edu called rc-pawprint-first-last as described in the Hands-On section (`git@gitlab.missouri.edu:$PAWPRINT/rc-$SSO-$FIRST-$LAST.git`).
+   2. Assign "Reporter" permissions to `@middelkoopt` to the project.
+   3. Create a `ReadMe.md` file and commit it to the repository (note the upper/lower case and spelling).
+   4. Clone the repository on `clark.rnet.missouri.edu`
+   5. Modify the `ReadMe.md` on `clark.rnet.missouri.edu` to include your name and short one paragraph biography written in Markdown.
+   6. Commit the changes with an appropriate commit message.
+   7. Push the changes back to `gitlab.missouri.edu`.
+   8. Run `git log` and paste the last commit/revision/hash (or `git
+     rev-parse HEAD`) into the homework assignment along with your
+     repository URL (`git remote -v`) to receive a grade for example:
+ ```
+1a9c8bc7e3011f563d2370c35f592fc6c987bab4
+git@gitlab.missouri.edu:user/welcome.git
+ ```
 
 ### References
 * Software Carpentry: Linux Shell (http://swcarpentry.github.io/shell-novice/) sections 1-3
