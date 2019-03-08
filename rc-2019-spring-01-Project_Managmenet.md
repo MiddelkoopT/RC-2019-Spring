@@ -19,9 +19,9 @@ capabilities that have been widely adopted.  In this section we
 explore the use of git and GitLab for this purpose.
 
 ### Reading
-
-* Pro Git (https://git-scm.com/book/en/v2) Chapters 1 (except 1.5), 2, 3, 5, (6 Optional)
-* GitLab Flavored Markdown (https://docs.gitlab.com/ee/user/markdown)
+ * GitHub: How not to lose your entire analysis! https://unr-omics.readthedocs.io/en/latest/git_lesson.html 
+ * Pro Git (https://git-scm.com/book/en/v2) Chapters 1 (except 1.5), 2, 3, 5, (6 Optional)
+ * GitLab Flavored Markdown (https://docs.gitlab.com/ee/user/markdown)
 
 ### Git Workflow
 A git workflow takes changes in an editor and provides a mechanism to create publishable "work" in the form of a "Work Package" in project management speak.  We can see this as a "stack" as follows.
