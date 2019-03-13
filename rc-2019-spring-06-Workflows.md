@@ -8,8 +8,26 @@ under CC by SA 3.0.
 
 ## Research and Engineering Computational and Data Workflows
 
+Computational and Data workflows are about building new systems and
+scaling existing ones.  The best approach is to do things deliberately
+and incrementally, which means starting small, testing often, and
+scaling slowly both in terms of code and data.
+
+One method for this is to use the 1,2,3 Go method, which can be expanded to 1:
+  1. Hello - get the technology working.
+  2. Textbook Example - do something easy.
+  3. Benchmark and Reference problems - resolve community problems.
+
+Only after this go and solve your original problem.
+
+This will provide a framework to test code and data alike in a
+sustainable way, making the use of techniques such as Test Driven
+Development (TDD) and Continuous Integration (CI) a natural and
+logical next step.
+
 ### Reading
- * Scientific Workflows: http://www.pnl.gov/computing/technologies/sci_workflow.stm
+ * Scientific Workflows:
+   http://www.pnl.gov/computing/technologies/sci_workflow.stm
 
 ### Workflows
 
@@ -64,7 +82,6 @@ developed. A workflow in general consists of the following steps:
    * Report generation
 
 These steps utilize the following components:
-
 1. A source code management system (git) to manage code.
 2. A project management system (gitlabs) to manage people and work.
 3. A data management system (may include a database) to manage data and metadata.
