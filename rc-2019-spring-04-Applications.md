@@ -20,9 +20,10 @@ expensive statistical software packages.  R utilizes a shell like the
 rest of the tools covered in this course and allows for easy
 automation for statistical analysis tasks.
 
-To run R you must first load the module, then run it on the cluster
+To run R you must first load the module, then run it on the cluster (check the version!)
 ```
-module load R/R-3.2.3 
+module avail r/
+module load r/r-3.5.3-python-2.7.14-tk
 srun --pty R
 ```
 
@@ -55,7 +56,7 @@ access to the files via the built-in file browser.
 
 The following example shows how to run an R script on the command line.
 ```bash
-module load R/R-3.2.3
+module load r/r-3.5.3-python-2.7.14-tk
 srun Rscript example.R
 ```
 

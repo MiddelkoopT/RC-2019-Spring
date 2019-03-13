@@ -75,8 +75,10 @@ All this is all brought together by **teams** with
 ** Security a fundamental property of systems and applications.
 
 ### Reading
- * Chapter 1, Introduction. "High Performance Computing: Modern Systems and Practices"
- 
+ * "High Performance Computing: Modern Systems and Practices" (Chapter 1, Introduction)
+ * Networking http://intronetworks.cs.luc.edu/current/ComputerNetworks.pdf (Chapter 1)
+
+
 ### Homework
 Homework 0-1: Using Secure Shell
  1. Connect to clark.rnet.missouri.edu with your pawprint (SSO) and pawprint password and run the following commands and copy and paste the session (as text).
@@ -176,4 +178,3 @@ git@gitlab.missouri.edu:user/welcome.git
 * Pro Git book https://git-scm.com/book/en/v2
 * Software Carpentry - Git http://swcarpentry.github.io/git-novice/
 * GitLabs Markdown https://docs.gitlab.com/ee/user/markdown.html
-
