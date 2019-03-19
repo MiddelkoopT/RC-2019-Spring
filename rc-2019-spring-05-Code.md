@@ -10,5 +10,7 @@ under CC by SA 3.0.
 
 ### Reading
  * Test Driven Development (TDD) http://www.agiledata.org/essays/tdd.html
+ * *Test Driven Development: By Example* by Kent Beck, Addison-Wesley, 2003. https://www.safaribooksonline.com/library/view/test-driven-development/0321146530 (available via MU library)
 
 ### References
+
