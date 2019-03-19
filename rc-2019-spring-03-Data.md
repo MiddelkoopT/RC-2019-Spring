@@ -16,12 +16,12 @@ data.
 
 ### Reading
 * JSON data format and specification: http://www.json.org/
-* Database design with UML and SQL, 3rd edition: http://www.tomjewett.com/dbdesign
-  * Models and languages http://www.tomjewett.com/dbdesign/dbdesign.php?page=models.html
-  * Basic structures: classes and schemes http://www.tomjewett.com/dbdesign/dbdesign.php?page=class.php
-  * Basic structures: rows and tables http://www.tomjewett.com/dbdesign/dbdesign.php?page=tables.php
-  * Basic structure: associations http://www.tomjewett.com/dbdesign/dbdesign.php?page=association.php
-  * Discussion: more about keys http://www.tomjewett.com/dbdesign/dbdesign.php?page=keys.php
+* Database design with UML and SQL, 3rd edition: http://web.csulb.edu/colleges/coe/cecs/dbdesign
+  * Models and languages http://web.csulb.edu/colleges/coe/cecs/dbdesign/dbdesign.php?page=models.html
+  * Basic structures: classes and schemes http://web.csulb.edu/colleges/coe/cecs/dbdesign/dbdesign.php?page=class.php
+  * Basic structures: rows and tables http://web.csulb.edu/colleges/coe/cecs/dbdesign/dbdesign.php?page=tables.php
+  * Basic structure: associations http://web.csulb.edu/colleges/coe/cecs/dbdesign/dbdesign.php?page=association.php
+  * Discussion: more about keys http://web.csulb.edu/colleges/coe/cecs/dbdesign/dbdesign.php?page=keys.php
 * Software Carpentry - Databases and SQL http://swcarpentry.github.io/sql-novice-survey/
   * Section 1-6 (Selecting Data, Sorting and Removing Duplicates,
     Filtering, Calculating New Values, Missing Data, and Aggregation).
@@ -337,7 +337,7 @@ up).
  * UTF-8/Unicode http://www.fileformat.info/info/charset/UTF-8/list.htm
  * JSON data format and specification http://www.json.org/
  * HDF5 data format introduction https://portal.hdfgroup.org/display/HDF5/Introduction+to+HDF5
- * Relational Databases http://www.tomjewett.com/dbdesign/
+ * Relational Databases http://web.csulb.edu/colleges/coe/cecs/dbdesign/
  * SQL database SQLite http://www.sqlite.org/
  * SQLite tutorial http://www.sqlitetutorial.net/
  * Software Carpentry - Databases and SQL http://swcarpentry.github.io/sql-novice-survey/
