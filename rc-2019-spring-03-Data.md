@@ -16,13 +16,17 @@ data.
 
 ### Reading
 * JSON data format and specification: http://www.json.org/
-* Database design with UML and SQL, 3rd edition: http://web.csulb.edu/colleges/coe/cecs/dbdesign
+* Database design with UML and SQL, 4th edition: http://web.csulb.edu/colleges/coe/cecs/dbdesign
   * Models and languages http://web.csulb.edu/colleges/coe/cecs/dbdesign/dbdesign.php?page=models.html
   * Basic structures: classes and schemes http://web.csulb.edu/colleges/coe/cecs/dbdesign/dbdesign.php?page=class.php
   * Basic structures: rows and tables http://web.csulb.edu/colleges/coe/cecs/dbdesign/dbdesign.php?page=tables.php
   * Basic structure: associations http://web.csulb.edu/colleges/coe/cecs/dbdesign/dbdesign.php?page=association.php
   * Discussion: more about keys http://web.csulb.edu/colleges/coe/cecs/dbdesign/dbdesign.php?page=keys.php
+* SQLite tutorial http://www.sqlitetutorial.net/
+  * See the "Database Example (chinook)" section on how to load the data.
+  * Sections 1-10 (Simple Query - Transactions)
 * Software Carpentry - Databases and SQL http://swcarpentry.github.io/sql-novice-survey/
+  * See the "Hands On SQLite3" section on how to load the databvase.
   * Section 1-6 (Selecting Data, Sorting and Removing Duplicates,
     Filtering, Calculating New Values, Missing Data, and Aggregation).
 
@@ -337,7 +341,7 @@ up).
  * UTF-8/Unicode http://www.fileformat.info/info/charset/UTF-8/list.htm
  * JSON data format and specification http://www.json.org/
  * HDF5 data format introduction https://portal.hdfgroup.org/display/HDF5/Introduction+to+HDF5
- * Relational Databases http://web.csulb.edu/colleges/coe/cecs/dbdesign/
+ * Database Design http://web.csulb.edu/colleges/coe/cecs/dbdesign/
  * SQL database SQLite http://www.sqlite.org/
  * SQLite tutorial http://www.sqlitetutorial.net/
  * Software Carpentry - Databases and SQL http://swcarpentry.github.io/sql-novice-survey/
