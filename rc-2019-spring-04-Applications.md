@@ -97,13 +97,13 @@ performance is not required.
 
 To run Julia on a single node with a single core, run the following:
 ```
-module load julia/julia-0.5.0
+module load julia/julia-0.6.2-openmpi-3.1.0-python-2.7.14-tk
 srun --pty julia
 ```
 
 To run 4 cores and 10GB or RAM use
 ```
-module load julia/julia-0.5.0
+module load julia/julia-0.6.2-openmpi-3.1.0-python-2.7.14-tk
 srun --pty --mem=10G -c 4 julia -p 4
 ```
 

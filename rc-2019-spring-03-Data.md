@@ -120,7 +120,7 @@ Load the Julia module and launch Julia on a compute node (if the
 `srun` command fails just run `julia`).
 
 ```bash
-module load julia/julia-0.5.0
+module load julia/julia-0.6.2-openmpi-3.1.0-python-2.7.14-tk
 srun --pty julia
 ```
 
