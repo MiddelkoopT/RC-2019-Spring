@@ -76,6 +76,7 @@ All this is all brought together by **teams** with
 
 ### Reading
  * "High Performance Computing: Modern Systems and Practices" (Chapter 1, Introduction)
+ * HPC for Dummies: https://www.amd.com/Documents/HPC_for_Dummies.pdf
  * Networking http://intronetworks.cs.luc.edu/current/ComputerNetworks.pdf (Chapter 1)
 
 
@@ -174,7 +175,7 @@ git@gitlab.missouri.edu:user/welcome.git
  ```
 
 ### References
-* Software Carpentry: Linux Shell (http://swcarpentry.github.io/shell-novice/) sections 1-3
-* Pro Git book https://git-scm.com/book/en/v2
-* Software Carpentry - Git http://swcarpentry.github.io/git-novice/
-* GitLabs Markdown https://docs.gitlab.com/ee/user/markdown.html
+ * Software Carpentry: Linux Shell (http://swcarpentry.github.io/shell-novice/) sections 1-3
+ * Pro Git book https://git-scm.com/book/en/v2
+ * Software Carpentry - Git http://swcarpentry.github.io/git-novice/
+ * GitLabs Markdown https://docs.gitlab.com/ee/user/markdown.html
