@@ -15,7 +15,9 @@ examples covered in the class. Using the "1,2,3, Go" system discussed
 in class the data is expected to be "3" (benchmark) and the
 computation is expected to be at least "2" (textbook) class.
 
-The project will use the class gitlabs `rc-project-*` git project.
+The project will use the gitlabs `rc-project-$USER-$FIRST-$LAST` git
+repository for the project and shared with "Reporter" permission to
+the instructor.
 
 ### Grading
 The project will be graded on the following areas:
