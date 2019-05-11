@@ -25,7 +25,8 @@ the instructor.
      that runs on the Clark cluster.
   2. The project results must be reproducible.  The project will be graded by
      cloning the repository and following the provided instructions.  Absolute 
-     filenames in configuration files or source code is strictly prohibited.
+     hard-coded filenames in configuration files or source code is strictly
+     prohibited.
   3. The workflow must consist of at least a data download and/or
      filtering step, an analysis step, and a results step in at least
      two languages.
