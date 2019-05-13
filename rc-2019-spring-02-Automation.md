@@ -1,4 +1,4 @@
-# IMSE 8410 Spring 2019 - Scripting
+# IMSE 8410 Spring 2019 - Automation
 
 *IMSE 8410 Advanced Computational Systems and Data Engineering*
 
