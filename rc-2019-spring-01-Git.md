@@ -1,4 +1,4 @@
-# IMSE 8410 Spring 2019 - GitLabs
+# IMSE 8410 Spring 2019 - Git
 
 *IMSE 8410 Advanced Computational Systems and Data Engineering*
 
