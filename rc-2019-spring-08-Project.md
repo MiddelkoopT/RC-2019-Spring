@@ -1,4 +1,4 @@
-# IMSE 8410 Spring 2019 - Workflows
+# IMSE 8410 Spring 2019 - Project
 
 *IMSE 8410 Advanced Computational Systems and Data Engineering*
 
