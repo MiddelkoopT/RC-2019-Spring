@@ -1,7 +1,7 @@
 # Redis on Clark
 
 ## Build a local copy of redis
-``
+```
 cd src
 wget http://download.redis.io/releases/redis-5.0.4.tar.gz
 tar -xzf redis-5.0.4.tar.gz
