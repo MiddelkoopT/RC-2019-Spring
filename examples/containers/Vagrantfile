@@ -1,0 +1,26 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+## Vagrant environment
+# vagrant plugin install vagrant-reload
+
+Vagrant.configure("2") do |config|
+  config.vm.box = "centos/7"
+  config.ssh.forward_agent = true
+
+  ## System Configuration
+  config.vm.provision "shell", inline: <<-SHELL
+    yum update -y
+    yum install -y epel-release
+    yum install -y git
+  SHELL
+
+  ## Build Environment
+  config.vm.provision "shell", inline: <<-SHELL
+    yum install -y gcc gcc-c++ patch
+  SHELL
+
+  ## Reboot base
+  config.vm.provision :reload
+
+end

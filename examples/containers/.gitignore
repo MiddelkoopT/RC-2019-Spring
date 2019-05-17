@@ -1,0 +1,5 @@
+/.vagrant
+/spack
+*.img
+*.out
+
