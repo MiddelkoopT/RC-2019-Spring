@@ -29,7 +29,7 @@ end of life.
 ### Automation Workflow
  0. Git clone.
  1. Envrionment.  Set location of system libraries and load modules. `environment.sh`
- 2. Setup. Build libraries software required for analysis. `setup.sh`
+ 2. Setup. Build libraries software required for analysis and setup package managers (python envrionments, spack). `setup.sh`
  3. Download Data. Transfer data and download public data-sets. `download.sh`
  4. Compile. Many codes require a build phase.  Build management tools like `make` should be used.`build.sh`
  5. Test. Run code unit tests (TDD). `test.sh`
