@@ -26,6 +26,22 @@ language should be used.
 Python 3 is used in this class and Python 2 should be avoided as it is
 end of life.
 
+### Automation Workflow
+ 0. Git clone.
+ 1. Envrionment.  Set location of system libraries and load modules. `environment.sh`
+ 2. Setup. Build libraries software required for analysis. `setup.sh`
+ 3. Download Data. Transfer data and download public data-sets. `download.sh`
+ 4. Compile. Many codes require a build phase.  Build management tools like `make` should be used.`build.sh`
+ 5. Test. Run code unit tests (TDD). `test.sh`
+ 6. Run. Develop and test code. `run.sh`
+ 7. Validate. Run code validation tests. `validate.sh`
+ 8. Experiment Setup.  Setup experimental control (create folders, build jobfiles etc) and populate experiment to be run on cluster. `experiments.sh`
+ 9. Run analysis. Use jobfiles to spawn analysi codes. `sbatch jobfile.sh`
+ 10. Analize.  Collect results and perform summary analysis. `analyze.sh`
+ 11. Archive. Save project data and results for publication. `archive.sh`
+ 12. Clean up. Remove all temporary data, binaries, and libraries. `clean.sh`
+
+
 ### Reading
  * HPC Carpentry - Introduction https://hpc-carpentry.github.io/hpc-shell/ (Sections 1-6)
  * HPC Carpentry - Python https://hpc-carpentry.github.io/hpc-python/ (Sections 1-6)
