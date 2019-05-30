@@ -14,5 +14,4 @@ spack install lmod
 
 ## Build packages
 . ./spack.sh
-spack install python@3.7.3
-
+spack install python@3.7.3 py-pip py-pkgconfig py-setuptools
